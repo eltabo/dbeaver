@@ -67,9 +67,7 @@ public class TimezoneRegistry {
 
     @NotNull
     public static String getGMTString(@NotNull String id) {
-        Instant instant = Instant.now();
-        ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(instant, ZoneId.of(id));
-        return  String.format("%s (UTC%s)", id, zonedDateTime.getOffset());
+        return  String.format("%s (UTC%s)", id, ZoneId.of(id).getRules().getOffset(Instant.now()));
     }
 
 
