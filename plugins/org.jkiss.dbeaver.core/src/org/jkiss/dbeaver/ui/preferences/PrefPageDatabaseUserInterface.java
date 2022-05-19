@@ -190,7 +190,7 @@ public class PrefPageDatabaseUserInterface extends AbstractPrefPage implements I
 
         notificationsEnabled.setSelection(store.getBoolean(ModelPreferences.NOTIFICATIONS_ENABLED));
         notificationsCloseDelay.setSelection(store.getInt(ModelPreferences.NOTIFICATIONS_CLOSE_DELAY_TIMEOUT));
-        final String string = store.getString(DBeaverPreferences.CLIENT_TIMEZONE);
+        final String string = store.getString(ModelPreferences.CLIENT_TIMEZONE);
         if (string.isEmpty()) {
             clientTimezone.setText(TimezoneRegistry.DEFAULT_VALUE);
         } else {
